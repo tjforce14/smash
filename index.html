@@ -4,161 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smash Brothers</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      height: 100vh;
-      background: url('images/homebackground.webp') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
-      font-weight: 900; /* For maximum boldness */
-      font-style: italic; /* Or use 'oblique' for a similar slant effect */
-      overflow: hidden;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      background: rgba(0, 0, 0, 0.5);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #ffd700;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 25px;
-      height: 20px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background: white;
-      border-radius: 5px;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 5%;
-        background: rgba(0, 0, 0, 0.8);
-        flex-direction: column;
-        width: 200px;
-        padding: 15px;
-        border-radius: 10px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 10px 0;
-        text-align: right;
-      }
-    }
-
-    main {
-      padding-top: 100px;
-      height: calc(100vh - 100px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .center-image {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: url('images/sblogoredblack.png') no-repeat center center;
-      background-size: contain;
-      opacity: 0;
-      animation: fadePulse 6s infinite ease-in-out;
-      transform: translate(0, -143px);
-    }
-
-    @keyframes fadePulse {
-      0% { opacity: 0; }
-      50% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-
-    /* Shuttlecock style */
-    .shuttlecock {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: url('images/shuttlecock.png') no-repeat center center;
-      background-size: contain;
-      background-color: transparent;
-      opacity: 0;
-      pointer-events: none;
-      animation: fly 10s linear forwards;
-    }
-
-    /* Animation keyframes */
-    @keyframes fly {
-      0% {
-        opacity: 0;
-        transform: translate(0, 0) scale(0.5) rotate(0deg);
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-        transform: translate(var(--x-move), var(--y-move)) scale(1) rotate(360deg);
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
@@ -178,7 +24,9 @@
   </nav>
 
   <main>
-    <div class="center-image"></div>
+    <div class="center-image">
+      <img src="images/sblogoredblack.png" alt="Smash Brothers Logo" style="width: 500px; height: auto;">
+    </div>
   </main>
 
   <script>
